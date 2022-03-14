@@ -17,6 +17,7 @@ __path =  ["formularios;"]
 SET PATH TO &__path ADDITIVE 
 
 DO FORM formularios\form_menu
+** agregado desde github
 
 CLOSE DATABASES
 CLEAR ALL
