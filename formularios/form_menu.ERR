@@ -1,0 +1,174 @@
+A
+Error in line 47: Unrecognized command verb.
+Caption = "CUIL"
+Error in line 49: Statement is not in a procedure.
+Height = 17
+Error in line 50: Statement is not in a procedure.
+Left = 92
+Error in line 51: Statement is not in a procedure.
+Top = 74
+Error in line 52: Statement is not in a procedure.
+Width = 36
+Error in line 53: Statement is not in a procedure.
+Name = "Label1"
+Error in line 54: Statement is not in a procedure.
+Left = 151
+Error in line 56: Statement is not in a procedure.
+MaxLength = 11
+Error in line 57: Statement is not in a procedure.
+Top = 71
+Error in line 58: Statement is not in a procedure.
+Width = 100
+Error in line 59: Statement is not in a procedure.
+Name = "txtCuil"
+Error in line 60: Statement is not in a procedure.
+Caption = "Clave"
+Error in line 62: Statement is not in a procedure.
+Height = 17
+Error in line 63: Statement is not in a procedure.
+Left = 89
+Error in line 64: Statement is not in a procedure.
+Top = 113
+Error in line 65: Statement is not in a procedure.
+Width = 40
+Error in line 66: Statement is not in a procedure.
+Name = "Label2"
+Error in line 67: Statement is not in a procedure.
+Left = 149
+Error in line 69: Statement is not in a procedure.
+MaxLength = 11
+Error in line 70: Statement is not in a procedure.
+Top = 110
+Error in line 71: Statement is not in a procedure.
+Width = 100
+Error in line 72: Statement is not in a procedure.
+PasswordChar = "*"
+Error in line 73: Statement is not in a procedure.
+Name = "txtClave"
+Error in line 74: Statement is not in a procedure.
+commandbutton
+Error in line 76: Unrecognized command verb.
+commandbutton
+Error in line 77: Unrecognized command verb.
+btnAceptar
+Error in line 78: Unrecognized command verb.
+Left = 77
+Error in line 79: Statement is not in a procedure.
+Height = 36
+Error in line 80: Statement is not in a procedure.
+Width = 192
+Error in line 81: Statement is not in a procedure.
+Caption = "\<Aceptar"
+Error in line 82: Statement is not in a procedure.
+Name = "btnAceptar"
+Error in line 83: Statement is not in a procedure.
+if   thisform.Caption = "Acceso al Sistema en DESARROLLO TIMPA"
+Error in line 85: Statement is not in a procedure.
+thisform.txtcuil.Value = '20213250222'
+Error in line 88: Statement is not in a procedure.
+thisform.txtClave.Value =  '20213250222' 
+Error in line 89: Statement is not in a procedure.
+ENDIF 
+Error in line 90: Statement is not in a procedure.
+IF EMPTY(thisform.txtcuil.Value) 
+Error in line 92: Statement is not in a procedure.
+MESSAGEBOX("No Ingreso CUIL",16, "Error")
+Error in line 93: Statement is not in a procedure.
+thisform.txtcuil.SetFocus 
+Error in line 94: Statement is not in a procedure.
+RETURN 
+Error in line 95: Statement is not in a procedure.
+ENDIF 
+Error in line 96: Statement is not in a procedure.
+IF EMPTY(thisform.txtClave.Value)
+Error in line 98: Statement is not in a procedure.
+MESSAGEBOX("No Ingreso Clave",16, "Error")
+Error in line 99: Statement is not in a procedure.
+thisform.txtClave.SetFocus 
+Error in line 100: Statement is not in a procedure.
+RETURN 
+Error in line 101: Statement is not in a procedure.
+ENDIF 
+Error in line 102: Statement is not in a procedure.
+xclave = ALLTRIM(thisform.txtClave.Value)
+Error in line 104: Statement is not in a procedure.
+xSql="SELECT * FROM per_usuarios WHERE cuil = '"+thisform.txtcuil.Value+"' AND clave = MD5('"+xclave+"') "
+Error in line 105: Statement is not in a procedure.
+SQLEXEC(cxn_per, xSql, "cur_existe")
+Error in line 107: Statement is not in a procedure.
+IF RECCOUNT() =1    
+Error in line 108: Statement is not in a procedure.
+gxUsuario_id = cur_existe.usuario_id
+Error in line 109: Statement is not in a procedure.
+xUsuarioNombre = ALLTRIM(cur_existe.apellido)+', '+ALLTRIM(cur_existe.nombre)
+Error in line 110: Statement is not in a procedure.
+xSqllActivo = "SELECT * FROM per_usuarios WHERE  activo AND usuario_id = "+STR(gxUsuario_id )
+Error in line 112: Statement is not in a procedure.
+SQLEXEC(cxn_per, xSqllActivo, "cur_existe")
+Error in line 113: Statement is not in a procedure.
+IF RECCOUNT() =1   
+Error in line 114: Statement is not in a procedure.
+thisform.Hide
+Error in line 115: Statement is not in a procedure.
+DO FORM formularios\form_menubtn 
+Error in line 117: Statement is not in a procedure.
+THISFORM.RELEASE()   
+Error in line 118: Statement is not in a procedure.
+ELSE 
+Error in line 119: Statement is not in a procedure.
+gxUsuario_id = -999
+Error in line 120: Statement is not in a procedure.
+MESSAGEBOX(xUsuarioNombre +" NO Tienes Permitido el Ingreso al Sistema",16, "Error")   
+Error in line 121: Statement is not in a procedure.
+thisform.txtcuil.SetFocus    
+Error in line 122: Statement is not in a procedure.
+ENDIF 
+Error in line 123: Statement is not in a procedure.
+ELSE
+Error in line 124: Statement is not in a procedure.
+gxUsuario_id = -999
+Error in line 125: Statement is not in a procedure.
+MESSAGEBOX("Datos Incorrectos",16, "Error")   
+Error in line 126: Statement is not in a procedure.
+thisform.txtcuil.SetFocus      
+Error in line 127: Statement is not in a procedure.
+ENDIF    
+Error in line 128: Statement is not in a procedure.
+ENDPROC
+Error in line 129: Nesting error.
+þ
+Error in line 134: Unrecognized command verb.
+commandbutton
+Error in line 146: Unrecognized command verb.
+commandbutton
+Error in line 147: Unrecognized command verb.
+Left = 137
+Error in line 148: Statement is not in a procedure.
+Height = 27
+Error in line 149: Statement is not in a procedure.
+Width = 84
+Error in line 150: Statement is not in a procedure.
+Caption = "\<Salir"
+Error in line 151: Statement is not in a procedure.
+Name = "Command1"
+Error in line 152: Statement is not in a procedure.
+thisform.Release
+Error in line 154: Statement is not in a procedure.
+ENDPROC
+Error in line 155: Nesting error.
+FontSize = 16
+Error in line 159: Statement is not in a procedure.
+Caption = "AREA PERSONAL"
+Error in line 160: Statement is not in a procedure.
+Height = 24
+Error in line 161: Statement is not in a procedure.
+Left = 80
+Error in line 162: Statement is not in a procedure.
+Top = 35
+Error in line 163: Statement is not in a procedure.
+Width = 192
+Error in line 164: Statement is not in a procedure.
+Style = 0
+Error in line 165: Statement is not in a procedure.
+Name = "Label3"
+Error in line 166: Statement is not in a procedure.
